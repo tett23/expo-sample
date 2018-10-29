@@ -28,9 +28,9 @@
       }
     },
     "setupFiles": [
-     "<rootDir>/node_modules/react-native/jest/setup.js",
+      "<rootDir>/node_modules/react-native/jest/setup.js",
       "<rootDir>/node_modules/jest-expo/src/setup.js",
-      "<rootDir>/__tests__/setup.ts"
+      "./__tests__/setup.ts"
     ],
     "testRegex": "(models/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
     "testPathIgnorePatterns": [
@@ -50,6 +50,8 @@
     "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
+    "@types/enzyme": "^3.1.14",
+    "@types/enzyme-adapter-react-16": "^1.0.3",
     "@types/expo": "^30.0.0",
     "@types/expo__vector-icons": "^6.2.3",
     "@types/jest": "^23.3.8",
@@ -57,9 +59,13 @@
     "@types/react-native": "^0.57.7",
     "@types/react-navigation": "^2.0.24",
     "@types/react-test-renderer": "^16.0.3",
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.6.0",
     "jest-expo": "30.0.0",
     "prettier": "^1.14.3",
+    "react-dom": "^16.6.0",
     "react-native-typescript-transformer": "^1.2.10",
+    "react-test-renderer": "^16.6.0",
     "ts-jest": "^23.10.4",
     "tslint": "^5.11.0",
     "tslint-config-prettier": "^1.15.0",

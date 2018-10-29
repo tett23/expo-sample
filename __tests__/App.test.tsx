@@ -1,7 +1,7 @@
 import React from 'react';
 import 'react-native';
 import NavigationTestUtils from 'react-navigation/NavigationTestUtils';
-import renderer from 'react-test-renderer';
+import * as renderer from 'react-test-renderer';
 import App from '../App';
 
 describe('App snapshot', () => {
@@ -12,6 +12,7 @@ describe('App snapshot', () => {
 
   it('renders the loading screen', async () => {
     const tree = renderer.create(<App />).toJSON();
+
     expect(tree).toMatchSnapshot();
   });
 

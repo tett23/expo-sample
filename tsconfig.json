@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "moduleResolution": "node",
+    "target": "es2017",
     "module": "es2015",
     "outDir": "lib",
     "sourceMap": true,
@@ -8,7 +9,6 @@
     "jsx": "react-native",
     "lib": ["dom", "es2015", "es2016"],
     "allowSyntheticDefaultImports": true,
-    "moduleResolution": "node",
     "noEmitHelpers": true,
     "importHelpers": true,
     "strict": true,

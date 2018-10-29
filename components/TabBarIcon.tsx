@@ -1,8 +1,8 @@
 import Icon from '@expo/vector-icons';
-import React from 'react';
+import React, { Component } from 'react';
 import Colors from '../constants/Colors';
 
-export default class TabBarIcon extends React.Component<any> {
+export default class TabBarIcon extends Component<any> {
   public render() {
     return (
       <Icon.Ionicons

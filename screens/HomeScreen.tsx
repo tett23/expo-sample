@@ -1,10 +1,16 @@
 import { WebBrowser } from 'expo';
-import React from 'react';
+import React, { Component } from 'react';
 import { Image, Platform, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 import { MonoText } from '../components/StyledText';
 
-export default class HomeScreen extends React.Component {
+import robotDev from '../assets/images/robot-dev.png';
+import robotProd from '../assets/images/robot-prod.png';
+
+// import robotDev from './assets/images/robot-dev.png';
+// import robotProd from './assets/images/robot-dev.png';
+
+export default class HomeScreen extends Component {
   public static navigationOptions = {
     header: null,
   };
@@ -14,10 +20,7 @@ export default class HomeScreen extends React.Component {
       <View style={styles.container}>
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
           <View style={styles.welcomeContainer}>
-            <Image
-              source={__DEV__ ? require('../assets/images/robot-dev.png') : require('../assets/images/robot-prod.png')}
-              style={styles.welcomeImage}
-            />
+            <Image source={__DEV__ ? robotDev : robotProd} style={styles.welcomeImage} />
           </View>
 
           <View style={styles.getStartedContainer}>
