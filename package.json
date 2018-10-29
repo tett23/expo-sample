@@ -7,20 +7,63 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "eject": "expo eject",
-    "test": "node ./node_modules/jest/bin/jest.js --watchAll"
+    "test": "node ./node_modules/jest/bin/jest.js --watchAll",
+    "lint": "tslint --fix --project tsconfig.json"
   },
   "jest": {
-    "preset": "jest-expo"
+    "preset": "jest-expo",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "json"
+    ],
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "globals": {
+      "ts-jest": {
+        "tsConfig": "tsconfig.json",
+        "babelConfig": true
+      }
+    },
+    "setupFiles": [
+     "<rootDir>/node_modules/react-native/jest/setup.js",
+      "<rootDir>/node_modules/jest-expo/src/setup.js",
+      "<rootDir>/__tests__/setup.ts"
+    ],
+    "testRegex": "(models/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "testPathIgnorePatterns": [
+      "node_modules",
+      "lib"
+    ]
   },
   "dependencies": {
     "@expo/samples": "2.1.1",
+    "@expo/vector-icons": "^8.0.0",
     "expo": "^30.0.1",
     "react": "16.3.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-30.0.0.tar.gz",
-    "react-navigation": "^2.16.0"
+    "react-navigation": "^2.16.0",
+    "react-redux": "^5.1.0",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
+    "@types/expo": "^30.0.0",
+    "@types/expo__vector-icons": "^6.2.3",
+    "@types/jest": "^23.3.8",
+    "@types/react": "^16.4.18",
+    "@types/react-native": "^0.57.7",
+    "@types/react-navigation": "^2.0.24",
+    "@types/react-test-renderer": "^16.0.3",
     "jest-expo": "30.0.0",
+    "prettier": "^1.14.3",
+    "react-native-typescript-transformer": "^1.2.10",
+    "ts-jest": "^23.10.4",
+    "tslint": "^5.11.0",
+    "tslint-config-prettier": "^1.15.0",
+    "tslint-plugin-prettier": "^2.0.1",
     "typescript": "^3.1.3"
   }
 }
