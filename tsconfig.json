@@ -9,10 +9,12 @@
     "jsx": "react-native",
     "lib": ["dom", "es2015", "es2016"],
     "allowSyntheticDefaultImports": true,
+    "noEmit": true,
     "noEmitHelpers": true,
     "importHelpers": true,
     "strict": true,
     "noImplicitReturns": true,
     "declaration": true,
+    "esModuleInterop": true
   }
 }

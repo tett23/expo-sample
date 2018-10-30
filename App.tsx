@@ -9,7 +9,6 @@ ScreenOrientation.allow(ScreenOrientation.Orientation.LANDSCAPE);
 import spaceMono from './assets/fonts/SpaceMono-Regular.ttf';
 import robotDev from './assets/images/robot-dev.png';
 import robotProd from './assets/images/robot-dev.png';
-console.log(robotDev);
 
 // const spaceMono = null;
 // const robotDev = null;
