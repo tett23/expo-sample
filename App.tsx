@@ -1,10 +1,18 @@
 import Icon from '@expo/vector-icons';
 import { AppLoading, Asset, Font, ScreenOrientation } from 'expo';
 import React, { Component } from 'react';
-import { Platform, StatusBar, StyleSheet, View } from 'react-native';
+import { Dimensions, Platform, StatusBar, StyleSheet, View } from 'react-native';
 import AppNavigator from './navigation/AppNavigator';
 
-ScreenOrientation.allow(ScreenOrientation.Orientation.LANDSCAPE);
+function isTablet() {
+  const { width, height } = Dimensions.get('window');
+  const aspectRatio = height / width;
+  return !(aspectRatio > 1.6);
+}
+
+if (isTablet()) {
+  ScreenOrientation.allow(ScreenOrientation.Orientation.LANDSCAPE);
+}
 
 import spaceMono from './assets/fonts/SpaceMono-Regular.ttf';
 import robotDev from './assets/images/robot-dev.png';
