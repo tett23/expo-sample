@@ -7,19 +7,19 @@ export type Repository = {
   name: string;
   path: string;
 };
-export type RepositoryReducer = {
+export type RepositoriesState = {
   items: Repository[];
   selectedIndex: number | null;
 };
 
-function initialState(): RepositoryReducer {
+function initialState(): RepositoriesState {
   return {
     items: [],
     selectedIndex: null,
   };
 }
 
-export default function repositories(state = initialState(), action: RepositoryActions): RepositoryReducer {
+export default function repositories(state = initialState(), action: RepositoryActions): RepositoriesState {
   switch (action.type) {
     case RepositoryAddAction:
       return { ...state, items: [...state.items, action.payload] };

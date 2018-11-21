@@ -1,8 +1,14 @@
 import { combineReducers, createStore } from 'redux';
-import repositories, { RepositoryReducer, RepositoryTypeFolder, RepositoryTypeGit } from './Repository';
+import files, { FilesState } from './Files';
+import repositories, { RepositoriesState, RepositoryTypeFolder, RepositoryTypeGit } from './Repository';
 
-const reducers = combineReducers(repositories);
-const initialState: { repositories: RepositoryReducer } = {
+export type State = {
+  repositories: RepositoriesState;
+  files: FilesState;
+};
+
+const reducers = combineReducers({ repositories, files });
+const initialState: State = {
   repositories: {
     selectedIndex: null,
     items: [
@@ -18,6 +24,9 @@ const initialState: { repositories: RepositoryReducer } = {
       },
     ],
   },
+  files: {
+    items: [],
+  },
 };
 
-export const store = createStore(reducers, initialState);
+export default createStore(reducers, initialState);

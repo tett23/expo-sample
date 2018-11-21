@@ -14,15 +14,13 @@ if (isTablet()) {
   ScreenOrientation.allow(ScreenOrientation.Orientation.LANDSCAPE);
 }
 
+import { Provider } from 'react-redux';
 import spaceMono from './assets/fonts/SpaceMono-Regular.ttf';
 import robotDev from './assets/images/robot-dev.png';
 import robotProd from './assets/images/robot-dev.png';
+import store from './modules';
 
-// const spaceMono = null;
-// const robotDev = null;
-// const robotProd = null;
-
-export default class App extends Component<any> {
+export class App extends Component<any> {
   public state = {
     isLoadingComplete: false,
   };
@@ -87,3 +85,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
 });
+
+export default function ReduxApp() {
+  return (
+    <Provider store={store}>
+      <App />
+    </Provider>
+  );
+}
