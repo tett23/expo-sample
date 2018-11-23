@@ -1,12 +1,11 @@
-import { Container, Content, Header, List, ListItem, Text } from 'native-base';
+import { List, ListItem, Text } from 'native-base';
 import React from 'react';
-import { ScrollView } from 'react-native';
 import { NavigationActions } from 'react-navigation';
 import { connect } from 'react-redux';
-import { Dispatch } from 'redux';
+import { ThunkDispatch } from 'redux-thunk';
 import { State } from '../modules';
 import { File } from '../modules/Files';
-import { selectFile } from '../modules/FileView';
+import { loadFile, selectFile } from '../modules/FileView';
 
 type Props = {
   files: File[];
@@ -40,10 +39,11 @@ function mapStateToProps({ repositories, files }: State) {
   };
 }
 
-function mapDispatchToProps(dispatch: Dispatch) {
+function mapDispatchToProps(dispatch: ThunkDispatch<any, any, any>) {
   return {
     onPress(repository: string, path: string) {
       dispatch(selectFile(repository, path));
+      dispatch(loadFile(repository, path));
       dispatch(NavigationActions.navigate({ routeName: 'FileView' }));
     },
   };

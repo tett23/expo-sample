@@ -75,6 +75,7 @@
     "enzyme": "^3.7.0",
     "enzyme-adapter-react-16": "^1.6.0",
     "jest-expo": "30.0.0",
+    "mock-async-storage": "^2.0.3",
     "prettier": "^1.14.3",
     "react-dom": "^16.6.0",
     "react-native-typescript-transformer": "^1.2.10",

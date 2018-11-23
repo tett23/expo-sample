@@ -1,5 +1,6 @@
 import { createReactNavigationReduxMiddleware } from 'react-navigation-redux-helpers';
 import { applyMiddleware, combineReducers, createStore } from 'redux';
+import thunk from 'redux-thunk';
 import files, { FilesState, FileTypeFile } from './Files';
 import fileView, { FileViewModeEdit, FileViewState } from './FileView';
 import navigation from './Navigation';
@@ -53,4 +54,4 @@ const initialState: Pick<State, 'repositories' | 'files'> = {
 
 const middleware = createReactNavigationReduxMiddleware('root', (state: any) => state.navigation);
 
-export default createStore(reducers, initialState, applyMiddleware(middleware));
+export default createStore(reducers, initialState, applyMiddleware(middleware, thunk));
