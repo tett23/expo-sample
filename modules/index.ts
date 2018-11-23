@@ -1,16 +1,19 @@
-import { combineReducers, createStore } from 'redux';
+import { createReactNavigationReduxMiddleware } from 'react-navigation-redux-helpers';
+import { applyMiddleware, combineReducers, createStore } from 'redux';
 import files, { FilesState, FileTypeFile } from './Files';
 import fileView, { FileViewModeEdit, FileViewState } from './FileView';
+import navigation from './Navigation';
 import repositories, { RepositoriesState, RepositoryTypeFolder, RepositoryTypeGit } from './Repository';
 
 export type State = {
   repositories: RepositoriesState;
   files: FilesState;
   fileView: FileViewState;
+  navigation: any;
 };
 
-const reducers = combineReducers({ repositories, files, fileView });
-const initialState: State = {
+const reducers = combineReducers({ repositories, files, fileView, navigation });
+const initialState: Pick<State, 'repositories' | 'files'> = {
   repositories: {
     selectedIndex: null,
     items: [
@@ -46,11 +49,8 @@ const initialState: State = {
       },
     ],
   },
-  fileView: {
-    repository: '',
-    path: '',
-    mode: FileViewModeEdit as typeof FileViewModeEdit,
-  },
 };
 
-export default createStore(reducers, initialState);
+const middleware = createReactNavigationReduxMiddleware('root', (state: any) => state.navigation);
+
+export default createStore(reducers, initialState, applyMiddleware(middleware));

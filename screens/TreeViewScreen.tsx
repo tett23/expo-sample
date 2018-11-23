@@ -8,16 +8,12 @@ type Props = {
 };
 
 export default function TreeViewScreen({ navigation }: Props) {
-  const transition = () => {
-    navigation.navigate('File');
-  };
-
   return (
     <ScrollView>
       <Container>
         <Header />
         <Content>
-          <TreeView transition={transition} />
+          <TreeView />
         </Content>
       </Container>
     </ScrollView>

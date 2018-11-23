@@ -1,6 +1,7 @@
 import { Container, Content, Header, List, ListItem, Text } from 'native-base';
 import React from 'react';
 import { ScrollView } from 'react-native';
+import { NavigationActions } from 'react-navigation';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 import { State } from '../modules';
@@ -9,7 +10,6 @@ import { selectFile } from '../modules/FileView';
 
 type Props = {
   files: File[];
-  transition: any;
   onPress: (repository: string, path: string) => void;
 };
 
@@ -40,11 +40,11 @@ function mapStateToProps({ repositories, files }: State) {
   };
 }
 
-function mapDispatchToProps(dispatch: Dispatch, { transition }: Props) {
+function mapDispatchToProps(dispatch: Dispatch) {
   return {
     onPress(repository: string, path: string) {
       dispatch(selectFile(repository, path));
-      transition();
+      dispatch(NavigationActions.navigate({ routeName: 'FileView' }));
     },
   };
 }

@@ -9,16 +9,12 @@ export default class HomeScreen extends Component {
   };
 
   public render() {
-    const transition = () => {
-      (this.props as any).navigation.navigate('TreeView');
-    };
-
     return (
       <ScrollView style={styles.container}>
         <Container>
           <Header />
           <Content>
-            <Repositories transition={transition} />
+            <Repositories />
           </Content>
         </Container>
       </ScrollView>

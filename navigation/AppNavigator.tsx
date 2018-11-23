@@ -1,10 +1,10 @@
 import { createStackNavigator } from 'react-navigation';
-import FileScreen from '../screens/FileScreen';
+import FileScreen from '../screens/FileViewScreen';
 import HomeScreen from '../screens/HomeScreen';
 import TreeViewScreen from '../screens/TreeViewScreen';
 
 export default createStackNavigator({
-  Main: HomeScreen,
+  Repositories: HomeScreen,
   TreeView: TreeViewScreen,
-  File: FileScreen,
+  FileView: FileScreen,
 });

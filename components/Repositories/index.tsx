@@ -1,5 +1,6 @@
 import { List, ListItem, Text } from 'native-base';
 import React from 'react';
+import { NavigationActions } from 'react-navigation';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 import { State } from '../../modules';
@@ -7,7 +8,6 @@ import { Repository, SelectRepository } from '../../modules/Repository';
 
 type Props = {
   repositories: Repository[];
-  transition: () => void;
   selectRepository: (idx: number) => void;
 };
 
@@ -27,11 +27,11 @@ function mapStateToProps({ repositories }: State) {
   return { repositories: repositories.items };
 }
 
-function mapDispatchToProps(dispatch: Dispatch, { transition }: Props) {
+function mapDispatchToProps(dispatch: Dispatch) {
   return {
     selectRepository(idx: number) {
       dispatch(SelectRepository(idx));
-      transition();
+      dispatch(NavigationActions.navigate({ routeName: 'TreeView' }));
     },
   };
 }

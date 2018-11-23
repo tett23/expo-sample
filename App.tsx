@@ -14,11 +14,20 @@ if (isTablet()) {
   ScreenOrientation.allow(ScreenOrientation.Orientation.LANDSCAPE);
 }
 
-import { Provider } from 'react-redux';
+import { reduxifyNavigator } from 'react-navigation-redux-helpers';
+import { connect, Provider } from 'react-redux';
 import spaceMono from './assets/fonts/SpaceMono-Regular.ttf';
 import robotDev from './assets/images/robot-dev.png';
 import robotProd from './assets/images/robot-dev.png';
-import store from './modules';
+import store, { State } from './modules';
+
+const ReduxifyAppNavigator = reduxifyNavigator(AppNavigator, 'root');
+function mapStateToProps(state: State) {
+  return {
+    state: state.navigation,
+  };
+}
+const AppWithNavigationState = connect(mapStateToProps)(ReduxifyAppNavigator as any);
 
 export class App extends Component<any> {
   public state = {
@@ -50,7 +59,7 @@ export class App extends Component<any> {
     return (
       <View style={styles.container}>
         {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
-        <AppNavigator />
+        <AppWithNavigationState {...{} as any} />
       </View>
     );
   }
