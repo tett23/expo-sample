@@ -2,13 +2,13 @@ import { createStore, Store } from 'redux';
 import repositoryReducer, {
   AddRepository,
   RemoveRepository,
-  RepositoryReducer,
+  RepositoriesState,
   RepositoryTypeGit,
   SelectRepository,
   UnselectRepository,
 } from '../../modules/Repository';
 
-let store: Store<RepositoryReducer>;
+let store: Store<RepositoriesState>;
 beforeEach(() => {
   store = createStore(repositoryReducer);
 
