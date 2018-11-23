@@ -22,6 +22,9 @@
     "transform": {
       "^.+\\.tsx?$": "ts-jest"
     },
+    "transformIgnorePatterns": [
+      "node_modules/(?!native-base-shoutem-theme|react-native-easy-grid|react-native|react-navigation|expo)"
+    ],
     "globals": {
       "ts-jest": {
         "tsConfig": "tsconfig.json",
@@ -31,7 +34,7 @@
     "setupFiles": [
       "<rootDir>/node_modules/react-native/jest/setup.js",
       "<rootDir>/node_modules/jest-expo/src/setup.js",
-      "./__tests__/setup.ts"
+      "<rootDir>/__tests__/setup.ts"
     ],
     "testRegex": "(models/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
     "testPathIgnorePatterns": [

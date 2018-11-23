@@ -1,0 +1,279 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[` when file is null renders correctly 1`] = `
+<View
+  style={Object {}}
+  virtual={undefined}
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "#000",
+        "fontFamily": "System",
+        "fontSize": 16,
+      }
+    }
+    uppercase={false}
+    virtual={undefined}
+  >
+    empty
+  </Text>
+</View>
+`;
+
+exports[` when mode is FileViewModeEdit renders correctly 1`] = `
+Array [
+  <View
+    style={Object {}}
+    virtual={undefined}
+  >
+    <View
+      style={Object {}}
+      virtual={undefined}
+    >
+      <TextInput
+        allowFontScaling={true}
+        editable={true}
+        multiline={true}
+        placeholder="Textarea"
+        placeholderTextColor="#575757"
+        rowSpan={10}
+        style={
+          Object {
+            "color": "#000",
+            "fontSize": 15,
+            "height": "100%",
+            "paddingLeft": 10,
+            "paddingRight": 5,
+            "textAlignVertical": "top",
+          }
+        }
+        underlineColorAndroid="rgba(0,0,0,0)"
+        value="/foo.md"
+        virtual={undefined}
+      />
+    </View>
+  </View>,
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "alignItems": "center",
+        "bottom": 20,
+        "flexDirection": "column",
+        "height": 56,
+        "left": undefined,
+        "position": "absolute",
+        "right": 20,
+        "top": undefined,
+        "width": 56,
+      }
+    }
+  >
+    <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      collapsable={undefined}
+      hasTVPreferredFocus={undefined}
+      hitSlop={undefined}
+      isTVSelectable={true}
+      nativeID={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "blue",
+          "borderRadius": 28,
+          "bottom": 0,
+          "elevation": 4,
+          "height": 56,
+          "justifyContent": "center",
+          "opacity": 1,
+          "position": "absolute",
+          "shadowColor": "#000",
+          "shadowOffset": Object {
+            "height": 2,
+            "width": 0,
+          },
+          "shadowOpacity": 0.4,
+          "shadowRadius": 2,
+          "width": 56,
+        }
+      }
+      testID={undefined}
+      tvParallaxProperties={undefined}
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={false}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": undefined,
+              "fontSize": 12,
+            },
+            Array [
+              Object {
+                "color": "#000",
+                "fontSize": 30,
+              },
+              Object {
+                "color": "#000",
+                "fontSize": 30,
+              },
+              Object {
+                "color": "#fff",
+                "fontSize": 24,
+                "lineHeight": 27,
+              },
+            ],
+            Object {
+              "fontFamily": "FontAwesome",
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+            },
+          ]
+        }
+        type="FontAwesome"
+        virtual={undefined}
+      >
+        
+      </Text>
+    </View>
+  </View>,
+]
+`;
+
+exports[` when mode is FileViewModePreview renders correctly 1`] = `
+Array [
+  <View
+    style={Object {}}
+    virtual={undefined}
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#000",
+          "fontFamily": "System",
+          "fontSize": 16,
+        }
+      }
+      uppercase={false}
+      virtual={undefined}
+    >
+      /foo.md
+    </Text>
+  </View>,
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "alignItems": "center",
+        "bottom": 20,
+        "flexDirection": "column",
+        "height": 56,
+        "left": undefined,
+        "position": "absolute",
+        "right": 20,
+        "top": undefined,
+        "width": 56,
+      }
+    }
+  >
+    <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      collapsable={undefined}
+      hasTVPreferredFocus={undefined}
+      hitSlop={undefined}
+      isTVSelectable={true}
+      nativeID={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "blue",
+          "borderRadius": 28,
+          "bottom": 0,
+          "elevation": 4,
+          "height": 56,
+          "justifyContent": "center",
+          "opacity": 1,
+          "position": "absolute",
+          "shadowColor": "#000",
+          "shadowOffset": Object {
+            "height": 2,
+            "width": 0,
+          },
+          "shadowOpacity": 0.4,
+          "shadowRadius": 2,
+          "width": 56,
+        }
+      }
+      testID={undefined}
+      tvParallaxProperties={undefined}
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={false}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": undefined,
+              "fontSize": 12,
+            },
+            Array [
+              Object {
+                "color": "#000",
+                "fontSize": 30,
+              },
+              Object {
+                "color": "#000",
+                "fontSize": 30,
+              },
+              Object {
+                "color": "#fff",
+                "fontSize": 24,
+                "lineHeight": 27,
+              },
+            ],
+            Object {
+              "fontFamily": "FontAwesome",
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+            },
+          ]
+        }
+        type="FontAwesome"
+        virtual={undefined}
+      >
+        
+      </Text>
+    </View>
+  </View>,
+]
+`;

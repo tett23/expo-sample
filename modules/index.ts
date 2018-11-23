@@ -1,6 +1,6 @@
 import { combineReducers, createStore } from 'redux';
 import files, { FilesState, FileTypeFile } from './Files';
-import fileView, { FileViewState } from './FileView';
+import fileView, { FileViewModeEdit, FileViewState } from './FileView';
 import repositories, { RepositoriesState, RepositoryTypeFolder, RepositoryTypeGit } from './Repository';
 
 export type State = {
@@ -49,6 +49,7 @@ const initialState: State = {
   fileView: {
     repository: '',
     path: '',
+    mode: FileViewModeEdit as typeof FileViewModeEdit,
   },
 };
 
