@@ -120,7 +120,7 @@ export function storeFile(repository: string, path: string, body: string) {
   return async (dispatch: Dispatch<any>) => {
     await AsyncStorage.setItem(`${repository}:${path}`, body);
 
-    return dispatch({
+    dispatch({
       type: StoreFileAction as typeof StoreFileAction,
       payload: {
         body,
